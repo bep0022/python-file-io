@@ -13,6 +13,7 @@ with open('origin.txt', 'r') as in_stream:
         for line_index, line in enumerate(in_stream):
             line = line.strip()
             word_list = line.split()
+            word_list = re.findall(r'\b\w+\b', line)
             word_list.sort()
             for word in word_list:
                 if herit_pattern.search(word):
